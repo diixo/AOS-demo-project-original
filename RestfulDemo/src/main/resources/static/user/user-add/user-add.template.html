@@ -1,0 +1,26 @@
+<div class="center">
+	<div class="center sectiontitle">UserAdd Component</div>
+<table cellspacing="0" cellpadding="0" border="0">
+	<thead>
+	<tr>
+		<td>Name</td> <td style="align-content: center"><input style="width: 90%" ng-model="$ctrl.name" type="text"/></td>
+	</tr>
+	<tr>
+		<td>Email</td> <td style="align-content: center"><input style="width: 90%" ng-model="$ctrl.email" type="text"/></td>
+	</tr>
+	<tr>
+		<td colspan="2" style="align:center">
+			<button ng-click="$ctrl.add()">Add</button>
+		</td>
+	</tr>
+	</thead>
+	<tfoot>
+	<tr>
+		<td colspan="2" style="align:center">
+			{{$ctrl.message}}
+		</td>
+	</tr>
+	</tfoot>
+</table>
+	
+</div>

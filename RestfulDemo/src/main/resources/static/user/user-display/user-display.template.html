@@ -1,0 +1,25 @@
+<div class="center">
+	<div class="center sectiontitle">UserDisplay Component</div>
+	<table class="userlist" cellspacing="0" cellpadding="0" border="1">
+		<thead>
+		<tr>
+			<td>ID</td>
+			<td>Name</td>
+			<td>Email</td>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="user in $ctrl.userlist">
+			<td>{{user.id}}</td>
+			<td>{{user.name}}</td>
+			<td>{{user.email}}</td>
+		</tr>
+		</tbody>
+		<tfoot>
+		<tr>
+			<td colspan="3"><button ng-click="$ctrl.display()">Display</button></td>
+		</tr>
+		</tfoot>
+	<table/>
+
+</div>

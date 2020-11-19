@@ -1,0 +1,23 @@
+<project default="all">
+    <target name="clean">
+        <delete dir="gen-java"/>
+        <delete>
+            <fileset dir="." includes="*.class"/>
+        </delete>
+    </target>
+   
+    <target name="compile">
+        <exec executable="thrift">
+            <arg line="-gen java"/>
+            <arg value="hello.thrift"/>
+        </exec>
+        <javac includeantruntime="false" classpath="/usr/local/lib/libthrift-0.10.0.jar:/usr/local/lib/slf4j-api-1.7.12.jar:/usr/local/lib/slf4j-log4j12-1.7.12.jar:/usr/local/lib/log4j-1.2.17.jar" srcdir="gen-java" destdir="gen-java"/>
+        <javac includeantruntime="false" classpath="/usr/local/lib/libthrift-0.10.0.jar:/usr/local/lib/slf4j-api-1.7.12.jar:/usr/local/lib/slf4j-log4j12-1.7.12.jar:/usr/local/lib/log4j-1.2.17.jar:gen-java:." srcdir="." destdir="."/>
+    </target>
+   
+    <target name="run">
+        <java classname="HelloClient" classpath="/usr/local/lib/libthrift-0.10.0.jar:/usr/local/lib/slf4j-api-1.7.12.jar:/usr/local/lib/slf4j-log4j12-1.7.12.jar:/usr/local/lib/log4j-1.2.17.jar:gen-java:."/>
+    </target>
+   
+    <target name="all" depends="clean,compile"/>
+</project>
